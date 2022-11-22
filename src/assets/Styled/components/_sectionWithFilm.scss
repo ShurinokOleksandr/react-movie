@@ -1,0 +1,22 @@
+.Section{
+  max-width: 100%;
+  margin-bottom: 70px;
+  &__container{
+    width: min(100% - 15px, 1200px);
+    margin-inline: auto;
+    .gallery{
+      &__blockHeader{
+        margin: 0 0 25px 0 ;
+        width: 305px;
+        border-radius: 15px;
+        p{
+          color: $Color;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+
+}

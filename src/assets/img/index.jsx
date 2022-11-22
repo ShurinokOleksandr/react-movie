@@ -1,0 +1,8 @@
+export {default as logo} from './logo.svg'
+export {default as login} from './Login.svg'
+export {default as search} from './search.svg'
+export {default as clear} from './clear.svg'
+export {default as sw1} from './sw1.jpg'
+export {default as sw2} from './sw2.jpg'
+export {default as sw3} from './sw3.jpg'
+export {default as sw4} from './sw4.jpg'

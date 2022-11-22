@@ -1,0 +1,13 @@
+@import "variables.scss";
+@import "components/all";
+@import "libs/normalize.scss";
+body{
+  background-image: repeating-linear-gradient(45deg, #038901 0, #048b02 1px, transparent 0, transparent 50%);
+  background-size: 36px 36px;
+  background-color: #5a0382;
+}
+.App{
+  height: 100vh;
+  margin: 20px auto;
+  position: relative;
+}

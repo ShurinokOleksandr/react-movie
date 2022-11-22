@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/Styled/App.scss';
+import Header from "./Layouts/Header";
+import Slider from "./Components/Swiper";
+import SectionWithFilm from "./Components/sectionWithFilm";
+import SectionGetPremium from "./Components/SectionGetPremium";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <Header/>
+            <Slider/>
+            <SectionGetPremium/>
+            <SectionWithFilm/>
+            <SectionWithFilm/>
+            <SectionWithFilm/>
+        </div>
+    );
 }
 
 export default App;
