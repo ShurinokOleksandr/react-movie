@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 import axios from "axios";
 import {Navigation, Pagination} from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import {like, sameMovie, unlike, watchLater} from "../../assets/img";
 const Index = () => {
 
     const [items,setItems] = useState([])
@@ -32,23 +33,66 @@ const Index = () => {
                         </div>
                         <div className="gallery__carousel">
                             <Swiper
-                                slidesPerView={4.5}
-                                spaceBetween={30}
-                                slidesPerGroup={2}
-                                loop={true}
-                                loopFillGroupWithBlank={true}
-                                pagination={{
-                                    clickable: true,
-                                    disableOnInteraction: true,
+                                breakpoints = {{
+                                    320: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20
+                                    },
+                                    480: {
+                                        slidesPerView: 2.5,
+                                        spaceBetween: 30
+                                    },
+                                    640: {
+                                        slidesPerView: 3,
+                                    },
+                                    850:{
+                                        slidesPerView:3.5
+                                    },
+                                    1067:{
+                                        slidesPerView:4
+                                    }
                                 }}
-                                navigation={true}
+                                slidesPerGroup={2}
+                                navigation
                                 modules={[Pagination, Navigation]}
                                 className="gallery__swiper"
                             >
                                 {items.map(i =>
-                                    <SwiperSlide className="Gallery__slide" key={i.id} >
-                                        <a href="#"><img src={`${urlImg}${i.poster_path}`} alt="img"/></a>
-                                    </SwiperSlide>)}
+                                    <SwiperSlide className="gallery__slide" key={i.id} >
+                                        <a href="#">
+                                            <img className='img'
+                                                src={`${urlImg}${i.poster_path}`}
+                                                alt="img"
+                                            />
+                                            <div className="HoverSlide">
+                                                <div className="HoverSlide__action">
+                                                    <div className="action-img">
+                                                        <img src={like} alt="like"/>
+                                                    </div>
+                                                    <div className="action-img">
+                                                        <img src={unlike} alt="unlike"/>
+                                                    </div>
+                                                    <div className="action-img">
+                                                        <img src={sameMovie} alt="sameMovie"/>
+                                                    </div>
+                                                    <div className="action-img">
+                                                        <img src={watchLater} alt="watchLater"/>
+                                                    </div>
+                                                </div>
+                                                <div className="HoverSlide__info">
+                                                    <div className="HoverSlide__info-release">
+                                                        <div className="rate">8</div>
+                                                        <div className="properties">
+                                                            2020,США,Боевик
+                                                        </div>
+                                                        <div className="duration">110мин</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </SwiperSlide>
+                                )
+                                }
                             </Swiper>
                         </div>
                     </div>

@@ -15,7 +15,6 @@
 
   }
   background: rgba(179, 177, 177, 0.25);
-
   border-radius: 15px;
   -webkit-box-shadow: 0 0 3px 2px #c5b113;
   -moz-box-shadow: 0 0 3px 2px #c5b113;
@@ -46,7 +45,7 @@
     }
   }
   @media (max-width: 470px) {
-    
+
     .Header__Container{
       max-width: 260px;
     }
@@ -93,17 +92,18 @@
   &__Categories{
     display: flex;
     margin-left: 15px;
-
-
     li{
       margin-right: 20px;
       text-transform: uppercase;
-
     }
     .link{
-      color: $Color;
+      color: peachpuff;
       font-size: 1.4rem;
       font-weight: 550;
+    }
+    .activeLink,
+    .link:hover{
+      color: $Color;
     }
   }
 
@@ -121,8 +121,8 @@
         width: 20px;
         height: 15px;
       }
-
     }
+
   }
   &__Input{
     background:inherit;
@@ -133,6 +133,10 @@
     font-size: 1.4rem;
     border: 1px solid #6f0825;
   }
+  &__Input:focus{
+    border: 2px solid #ac3b5b;
+
+  }
   &__Login{
     .ImageLogin{
       width: 40px;
@@ -142,6 +146,9 @@
       padding: 7px;
       border-radius: 10px;
     }
+  }
+  .ImageLogin:hover{
+    background: #635d5d;
   }
 
 }

@@ -26,25 +26,23 @@ export default function App() {
             <Swiper
                 slidesPerView={1.25}
                 spaceBetween={30}
+                initialSlide={1}
                 centeredSlides={true}
-                observer={true}
+                observeParents={true}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                 }}
                 loop={true}
                 loopFillGroupWithBlank={true}
-                pagination={{
-                    dynamicBullets:true,
-                    clickable: true,
-                }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
                 {
                     per.map(i =>
-                    <SwiperSlide key={i.id} className='swiper_slide'><a href="#">
+                    <SwiperSlide key={i.id} className='swiper_slide'>
+                        <a href="#">
                         <img src={`${urlImg}${i.backdrop_path}`} alt="img"/>
                     </a>
                     </SwiperSlide>

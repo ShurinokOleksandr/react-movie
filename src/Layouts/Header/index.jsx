@@ -1,6 +1,7 @@
 import React from 'react';
 import {logo,login,search,clear} from '../../assets/img/index'
 import SideMenu from '../../Components/SideMenu/index'
+import HeaderLinks from "./HeaderLinks";
 const Header = () => {
     return (
         <header className="Header">
@@ -9,13 +10,7 @@ const Header = () => {
                     <div className="Header__Logo Logo">
                         <a href="#"><img src={logo} className="ImageLogo" alt="logo"/></a>
                     </div>
-                    <ul className="Header__Categories Categories">
-                        <li><a href="#" className="link">Главная</a></li>
-                        <li><a href="#" className="link">Фильмы</a></li>
-                        <li><a href="#" className="link">TV</a></li>
-                        <li><a href="#" className="link">Аниме</a></li>
-                        <li><a href="#" className="link">Домашняя</a></li>
-                    </ul>
+                    <HeaderLinks/>
                     <SideMenu />
                 </div>
                 <div className="Header__SearchAndLogin">
