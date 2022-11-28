@@ -2,6 +2,7 @@
   "name": "pet-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://shurinokoleksandr.github.io/react-movie/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

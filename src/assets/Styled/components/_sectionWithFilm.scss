@@ -80,6 +80,11 @@
                     }
                   }
                 }
+                @media (max-width: 1200px) {
+                  .HoverSlide__info{
+                    display: none;
+                  }
+                }
               }
               .HoverSlide > * {
                 transform: translateY(20px);
