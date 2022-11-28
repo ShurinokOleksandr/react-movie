@@ -80,10 +80,11 @@
                     }
                   }
                 }
-                @media (max-width: 1200px) {
-                  .HoverSlide__info{
-                    display: none;
-                  }
+
+              }
+              @media (max-width: 1200px) {
+                .HoverSlide{
+                  display: none;
                 }
               }
               .HoverSlide > * {
