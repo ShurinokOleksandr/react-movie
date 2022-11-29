@@ -15,7 +15,6 @@ function App() {
             <Slider/>
             <SectionGetPremium/>
             <SectionWithFilm/>
-            <SectionWithFilm/>
             <Footer/>
         </div>
     );

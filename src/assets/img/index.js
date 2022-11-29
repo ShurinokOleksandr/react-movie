@@ -8,3 +8,6 @@ export {default as like} from './like.svg'
 export {default as unlike} from './unlike.svg'
 export {default as watchLater} from './watchLater.svg'
 export {default as sameMovie} from './sameMovie.svg'
+export {default as HintHuman} from './HintHuman.svg'
+export {default as HintMovie} from './HintMovie.svg'
+

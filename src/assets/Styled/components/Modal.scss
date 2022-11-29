@@ -1,0 +1,111 @@
+.Header__Modal{
+  display: none;
+  position: fixed;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  .Close_Modal{
+    display: block;
+    position: absolute;
+    height: 40px;
+    width: 90px;
+    border-radius: 20px;
+    margin: 30px 30px 0 0;
+    top: 0;
+    right: 0;
+    color: $Color;
+    font-weight: bold;
+    font-size: 1.6rem;
+    background: $background;
+    border: none;
+    cursor: pointer;
+  }
+  .Close_Modal:active{
+    background: #5f1cd6;
+  }
+  .Modal_Overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(7,5,14,.96);
+    .wrapper_overlay{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .wrapper-content{
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        .Modal-content{
+
+          .wrapper__modal-title{
+            padding-top: 60px;
+            .title__container{
+              max-width: 900px;
+              margin: 0 auto;
+              padding: 0 50px;
+              h2{
+                font-size: 4rem;
+                color: $Color;
+                margin-bottom: 40px;
+              }
+              .Modal-input{
+                margin-bottom: 40px;
+                input{
+                  background: #cecbcb;
+                  border-radius: 15px;
+                  padding: 25px 0 25px 30px ;
+                  height: 40px;
+                  width: 100%;
+                  font-size: 1.8rem;
+                  color: #1e3e0d;
+                }
+              }
+            }
+          }
+        }
+        .wrapper__hints{
+          &-container{
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+            .Hint__Flex{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(5, 1fr);
+              grid-gap: 10px;
+              .Modal__Hint{
+                margin-bottom: 20px;
+                .Wrapper__Found{
+                  display: flex;
+                  .Found-Img{
+                    margin-right: 10px;
+                  }
+                  .Hint-About{
+                    h6{
+                      color: $Color;
+                      font-size: 2vh;
+
+                    }
+                    p{
+                      color: $Color;
+                      font-size: 1.4rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.active{
+  display: block;
+}
