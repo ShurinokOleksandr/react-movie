@@ -14,10 +14,12 @@ const Modal = ({children,visible,setVisible}) => {
                         <div className="Modal-content">
                             <div className="wrapper__modal-title">
                                 <div className="title__container">
-                                    <h2>Поиск</h2>
+                                    <div className="sd">
+                                        <h2>Поиск</h2>
+                                        <button onClick={() => setVisible(false)} className="Close_Modal">Закрыть</button>
+                                    </div>
                                     <div className="Modal-input">
                                         <input type="text" placeholder='Фильмы, персоны, жанры' className=""/>
-                                        <button onClick={() => setVisible(false)} className="Close_Modal">Закрыть</button>
                                     </div>
                                 </div>
                             </div>

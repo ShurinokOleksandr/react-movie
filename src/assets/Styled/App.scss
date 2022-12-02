@@ -1,12 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "variables.scss";
 @import "components/all";
 @import "libs/normalize.scss";
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 #root{
 
 }
-body{
-
+body {
+  scrollbar-width: none;
 }
+
 .App{
   background: #370c87;
   background: -webkit-linear-gradient(0deg, #370c87 0%, #4c075a 100%);
@@ -14,6 +19,6 @@ body{
   padding: 20px 0 0 0 ;
   margin: 0px auto;
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
 }

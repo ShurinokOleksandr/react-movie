@@ -1,0 +1,18 @@
+.Films__Search{
+  &-container{
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+
+    .Films__content{
+      background: #dfcc31;
+      border-radius: 16px;
+      &-parameters{
+        padding: 15px 50px;
+        .Genres{
+          width: calc(1200px / 5);
+          margin: 0 15px;
+        }
+      }
+    }
+  }
+}

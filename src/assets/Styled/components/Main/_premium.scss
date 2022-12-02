@@ -1,6 +1,6 @@
 .Premium{
   max-width: 100%;
-  margin: 0  0 60px 0;
+  margin: 0  5px 60px 5px;
   &__Container{
     background: rgba(179, 177, 177, 0.25);
     width: min(100% - 15px, 1200px);
@@ -13,7 +13,7 @@
       text-align: center;
       padding: 25px 0 ;
       color: $Color;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: bold;
     }
   }

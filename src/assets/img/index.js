@@ -10,4 +10,6 @@ export {default as watchLater} from './watchLater.svg'
 export {default as sameMovie} from './sameMovie.svg'
 export {default as HintHuman} from './HintHuman.svg'
 export {default as HintMovie} from './HintMovie.svg'
+export {default as arrow} from './arrow.svg'
+
 

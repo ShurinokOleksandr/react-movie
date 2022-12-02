@@ -9,13 +9,10 @@
   z-index: 1001;
   .Close_Modal{
     display: block;
-    position: absolute;
     height: 40px;
     width: 90px;
     border-radius: 20px;
-    margin: 30px 30px 0 0;
-    top: 0;
-    right: 0;
+    margin-bottom: 40px;
     color: $Color;
     font-weight: bold;
     font-size: 1.6rem;
@@ -49,10 +46,14 @@
               max-width: 900px;
               margin: 0 auto;
               padding: 0 50px;
-              h2{
-                font-size: 4rem;
-                color: $Color;
-                margin-bottom: 40px;
+              .sd{
+                display: flex;
+                justify-content: space-between;
+                h2{
+                  font-size: 4rem;
+                  color: $Color;
+                  margin-bottom: 40px;
+                }
               }
               .Modal-input{
                 margin-bottom: 40px;

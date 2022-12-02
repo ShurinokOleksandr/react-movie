@@ -1,0 +1,16 @@
+.Films{
+  max-width: 1200px;
+  margin: 0 auto;
+  @import "headerSearchTitle";
+  @import "filterMovies";
+}
+@media (max-width: 1200px) {
+  .Films{
+    max-width: 80%;
+  }
+}
+@media (max-width: 470px) {
+  .Films {
+    max-width: 80%;
+  }
+}

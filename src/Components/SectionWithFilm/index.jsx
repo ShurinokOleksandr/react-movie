@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import {like, sameMovie, unlike, watchLater} from "../../assets/img";
+import {RateReview} from "@mui/icons-material";
 const Index = () => {
 
     const [items,setItems] = useState([])
@@ -61,27 +62,29 @@ const Index = () => {
                                     <SwiperSlide className="gallery__slide" key={i.id} >
                                         <a href="#">
                                             <img className='img'
-                                                src={`${urlImg}${i.poster_path}`}
-                                                alt="img"
+                                                 src={`${urlImg}${i.poster_path}`}
+                                                 alt="img"
                                             />
                                             <div className="HoverSlide">
                                                 <div className="HoverSlide__action">
                                                     <div className="action-img">
-                                                        <img src={like} alt="like"/>
+                                                        <img title='Нравиться' src={like} alt="like"/>
                                                     </div>
                                                     <div className="action-img">
-                                                        <img src={unlike} alt="unlike"/>
+                                                        <img title='Не нравиться' src={unlike} alt="unlike"/>
                                                     </div>
                                                     <div className="action-img">
-                                                        <img src={sameMovie} alt="sameMovie"/>
+                                                        <a href="/#">
+                                                            <img title='Похожие' src={sameMovie} alt="sameMovie"/>
+                                                        </a>
                                                     </div>
                                                     <div className="action-img">
-                                                        <img src={watchLater} alt="watchLater"/>
+                                                        <img title='Посмотреть позже' src={watchLater} alt="watchLater"/>
                                                     </div>
                                                 </div>
                                                 <div className="HoverSlide__info">
                                                     <div className="HoverSlide__info-release">
-                                                        <div className="rate">8</div>
+                                                        <span className="rate">8</span>
                                                         <div className="properties">
                                                             2020,США,Боевик
                                                         </div>

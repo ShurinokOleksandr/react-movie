@@ -6,7 +6,7 @@ const FooterColumn = ({links}) => {
             <div className="Footer__Title">О нас</div>
             <ul className="LinkList">
                 {
-                    links.map(l => <li className='LinkItem'><a href="#">{l}</a></li>)
+                    links.map((l,i) => <li key={i} className='LinkItem'><a href="#">{l}</a></li>)
                 }
                 {/*<li className="LinkItem">О нас</li>*/}
                 {/*<li className="LinkItem">О компании</li>*/}
