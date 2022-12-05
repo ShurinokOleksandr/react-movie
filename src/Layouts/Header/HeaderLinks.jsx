@@ -5,7 +5,7 @@ const HeaderLinks = () => {
     return (
         <ul className="Header__Categories Categories">
             <li>
-                <NavLink to={"react-movie"} className={({ isActive }) => isActive ? 'link activeLink' : 'link'}>
+                <NavLink to={"/react-movie"} className={({ isActive }) => isActive ? 'link activeLink' : 'link'}>
                     Главная
                 </NavLink>
             </li>
@@ -25,7 +25,7 @@ const HeaderLinks = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/home" className={({ isActive }) => isActive ? 'link activeLink' : 'link'}>
+                <NavLink to="home" className={({ isActive }) => isActive ? 'link activeLink' : 'link'}>
                     Домашняя
                 </NavLink>
             </li>

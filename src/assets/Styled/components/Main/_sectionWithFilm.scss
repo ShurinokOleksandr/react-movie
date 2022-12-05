@@ -22,9 +22,9 @@
             a{
               img{
                 position: relative;
+                margin-left: 40px;
                 max-width: 100%;
                 border-radius:  40px;
-                margin-left: 40px;
               }
 
               .HoverSlide{
@@ -63,12 +63,24 @@
 
                   &-release{
                     margin-bottom: 25px;
-                    .rate{
-                      color: #f4f4f4;
-                      font-size: 2.5rem;
-                      margin-bottom: 10px;
-                      border-top: #d21010;
+                    .Wrap-Rate{
+                      display: flex;
+                      align-items: center;
+                      .rate{
+                        color: #f4f4f4;
+                        font-size: 2.5rem;
+                        margin-bottom: 5px;
+                        margin-right: 10px;
+
+                      }
+                      .stars{
+                        *{
+                          color: #d6d633;
+                          font-size: 2rem;
+                        }
+                      }
                     }
+
                     .properties{
                       color: #c6c4bf;
                         font-size: 1.8rem;
@@ -86,6 +98,7 @@
                 .HoverSlide{
                   display: none;
                 }
+
               }
               .HoverSlide > * {
                 transform: translateY(20px);
@@ -96,6 +109,15 @@
               }
               .HoverSlide:hover{
                 opacity: 1;
+              }
+            }
+          }
+          @media (max-width: 1200px) {
+            .gallery__slide{
+              a{
+                img{
+                  margin-left: 0;
+                }
               }
             }
           }

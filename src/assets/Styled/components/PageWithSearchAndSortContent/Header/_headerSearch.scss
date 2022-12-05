@@ -3,6 +3,8 @@
   margin: 0 auto;
   @import "headerSearchTitle";
   @import "filterMovies";
+  @import "../SwiperGenres";
+  @import "../ActorsSwiper";
 }
 @media (max-width: 1200px) {
   .Films{

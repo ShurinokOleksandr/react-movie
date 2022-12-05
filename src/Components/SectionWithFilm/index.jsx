@@ -3,23 +3,26 @@ import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 import axios from "axios";
 import {Navigation, Pagination} from "swiper";
 // Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import {like, sameMovie, unlike, watchLater} from "../../assets/img";
 import {RateReview} from "@mui/icons-material";
-const Index = () => {
+import {Rating, Stack} from "@mui/material";
+export const api_key ='8ef3978391d5bf962188c41a2ab0b6d6'
+const urlImg = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 
+const Index = () => {
     const [items,setItems] = useState([])
-    const api_key ='8ef3978391d5bf962188c41a2ab0b6d6'
     const urlImgCoursel = ``
-    const urlImg = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=1`)
             .then(res => setItems(res.data.results))
 
     },[])
+
     return (
         <section className="Section Section_styles">
             <div className="Section__container">
@@ -84,7 +87,12 @@ const Index = () => {
                                                 </div>
                                                 <div className="HoverSlide__info">
                                                     <div className="HoverSlide__info-release">
-                                                        <span className="rate">8</span>
+                                                        <div className="Wrap-Rate">
+                                                        <span className="rate">
+                                                            {i.vote_average}
+                                                        </span>
+                                                            <Rating className={"stars"} name="half-rating-read" defaultValue={i.vote_average/2} precision={0.5} readOnly />
+                                                        </div>
                                                         <div className="properties">
                                                             2020,США,Боевик
                                                         </div>

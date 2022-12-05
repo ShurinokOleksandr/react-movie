@@ -4,15 +4,30 @@
     margin: 0 auto 50px auto;
 
     .Films__content{
-      background: #dfcc31;
+      background: #d4bd2a;
       border-radius: 16px;
       &-parameters{
-        padding: 15px 50px;
-        .Genres{
-          width: calc(1200px / 5);
-          margin: 0 15px;
+        padding: 25px 20px;
+        display: flex;
+        justify-content: space-around;
+          .Genres{
+          margin: 0 10px;
+          width: 100%;
+          background: #ffe800;
         }
       }
+    }
+    .Reset__Filter{
+    padding: 0 0 25px 25px;
+      display: flex;
+      align-items: center;
+      &-img{
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.8rem;
+      }
+
     }
   }
 }

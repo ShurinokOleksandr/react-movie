@@ -1,10 +1,9 @@
 import React from 'react';
+import PageWithSearchAndSortContent from "../Components/PageWithSearchAndSortContent";
 
 const Anime = () => {
     return (
-        <div>
-            anive
-        </div>
+        <PageWithSearchAndSortContent />
     );
 };
 

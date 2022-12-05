@@ -1,5 +1,5 @@
 import React from 'react';
-import PageWithSearchAndSortContent from "../Layouts/PageWithSearchAndSortContent";
+import PageWithSearchAndSortContent from "../Components/PageWithSearchAndSortContent";
 
 const Films = () => {
     const obj = {
