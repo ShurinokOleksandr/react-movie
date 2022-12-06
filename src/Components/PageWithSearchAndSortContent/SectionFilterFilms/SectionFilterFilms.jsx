@@ -7,8 +7,10 @@ const SectionFilterFilms = () => {
 
     return (
         <div className="Films__content-parameters">
-            <SortCategoryByDate/>
-            <SortCategory/>
+            {/*<div className="wrapper-sort">*/}
+                <SortCategoryByDate/>
+                <SortCategory/>
+            {/*</div>*/}
         </div>
     );
 };

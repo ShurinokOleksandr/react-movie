@@ -16,7 +16,8 @@ function App() {
                 <Header/>
                 <Routes>
                     <Route path={'/react-movie'} element={<Main/> }/>
-                    <Route path={'films'} element={<Films/> } />
+                    <Route path={'films'} element={<Films/> }>
+                    </Route>
                     <Route path={'tv'} element={<TV/> } />
                     <Route path={'anime'} element={<Anime/> } />
                     <Route path={'home'} element={<Home/> } />

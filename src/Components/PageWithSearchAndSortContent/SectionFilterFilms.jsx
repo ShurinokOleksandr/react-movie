@@ -3,9 +3,6 @@ import SectionFilterFilms from "./SectionFilterFilms/SectionFilterFilms";
 import ResetFilterButton from "./SectionFilterFilms/ResetFilterButton";
 const SectionWithSearchFilms = () => {
 
-
-
-
     return (
         <div className="Films__Search">
             <div className="Films__Search-container">

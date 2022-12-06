@@ -1,10 +1,11 @@
 import React from 'react';
+import PageWithSearchAndSortContent from "../Components/PageWithSearchAndSortContent";
 
 const Tv = () => {
     return (
-        <div>
-            tv
-        </div>
+        <>
+            <PageWithSearchAndSortContent />
+        </>
     );
 };
 

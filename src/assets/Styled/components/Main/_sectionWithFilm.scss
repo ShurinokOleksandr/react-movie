@@ -8,23 +8,35 @@
     .gallery {
       &__blockHeader {
         margin: 0 0 25px 0;
-        width: 305px;
         border-radius: 15px;
-        p {
+        h1 {
           color: $Color;
-          font-size: 20px;
+          font-size: 30px;
           font-weight: bold;
+        }
+      }
+      @media (max-width: 540px) {
+        .gallery__blockHeader{
+          h1{
+            font-size: 20px;
+          }
         }
       }
       &__carousel {
         .gallery__swiper {
           .gallery__slide{
+            &:hover{
+              -webkit-transform: scale(1.01);
+              -ms-transform: scale(1.01);
+              transform: scale(1.01);
+              transition: 1s;
+            }
             a{
               img{
                 position: relative;
                 margin-left: 40px;
                 max-width: 100%;
-                border-radius:  40px;
+                border-radius:  16px;
               }
 
               .HoverSlide{
@@ -33,7 +45,7 @@
                 left: 0;
                 height: 330px;
                 width: 220px;
-                border-radius:  40px;
+                border-radius:  16px;
                 margin-left: 40px;
                 background: rgba(0, 0, 0, 0.7);
                 opacity: 0;
@@ -83,7 +95,7 @@
 
                     .properties{
                       color: #c6c4bf;
-                        font-size: 1.8rem;
+                      font-size: 1.8rem;
                       margin-bottom: 10px;
                     }
                     .duration{

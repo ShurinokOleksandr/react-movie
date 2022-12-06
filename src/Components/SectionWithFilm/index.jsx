@@ -10,8 +10,8 @@ import "swiper/css/navigation";
 import {like, sameMovie, unlike, watchLater} from "../../assets/img";
 import {RateReview} from "@mui/icons-material";
 import {Rating, Stack} from "@mui/material";
-export const api_key ='8ef3978391d5bf962188c41a2ab0b6d6'
-const urlImg = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
+    export const api_key ='8ef3978391d5bf962188c41a2ab0b6d6'
+export const urlImg = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 
 const Index = () => {
     const [items,setItems] = useState([])
@@ -30,9 +30,9 @@ const Index = () => {
                     <div className="gallery home__gallery">
                         <div className="gallery__blockHeader">
                             <a href="#" className="blockHeader">
-                                <div  className="blockHeader__text">
-                                    <p>Рекомендуемо к просмотру</p>
-                                </div>
+                                <h1  className="blockHeader__text">
+                                    Рекомендуемо к просмотру
+                                </h1>
                             </a>
                         </div>
                         <div className="gallery__carousel">
@@ -44,7 +44,7 @@ const Index = () => {
                                     },
                                     480: {
                                         slidesPerView: 2.5,
-                                        spaceBetween: 30
+                                        spaceBetween: 35
                                     },
                                     640: {
                                         slidesPerView: 3,

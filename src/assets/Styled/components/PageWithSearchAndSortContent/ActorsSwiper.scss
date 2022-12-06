@@ -1,17 +1,31 @@
 .Actors{
   max-width: 100%;
+  margin-top: 20px;
   margin-bottom: 90px;
   &__Slide{
-    border-radius: 50%;
-    height: 140px;
-    width: 140px;
+    height: auto;
     background: #253396;
     padding:25px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &-Item{
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid black;
+    img{
+      border-radius: 16px;
+      display: block;
+    }
+    p{
+      font-size: 20px;
+      margin: 10px 0;
+      color: $Color;
+      font-weight: bold;
+    }
+  }
+  @media (max-width: 850px) {
+    .Actors__Slide{
 
+      p{
+        font-size: 10px;
+      }
     }
   }
 }

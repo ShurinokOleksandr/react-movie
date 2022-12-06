@@ -1,24 +1,47 @@
+.Title-Genres{
+  display: block;
+  color: $Color;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+
+}
+@media (max-width: 850px) {
+.Title-Genres{
+  font-size: 2.7rem;
+}
+}
+@media (max-width: 540px) {
+  .Title-Genres{
+    font-size: 2rem;
+  }
+}
 .GenresSwiper{
   max-width: 100%;
+  margin-top: 20px;
   margin-bottom: 90px;
   padding:0 35px;
   &-Slide{
-    height: auto;
+    height: 72px;
     background: #253396;
     border-radius: 16px;
-    width: 100%;
+    max-width: 100%;
     padding:25px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     p{
       font-weight: bold;
-      color: #c3b40f;
+      color: $Color;
       text-align: center;
       font-size: 1.5rem;
+    }
 
+    &:hover{
+      background: #3142c0;
     }
   }
+
   .swiper-button-prev:after{
     color: #c3b40f;
     position: absolute;

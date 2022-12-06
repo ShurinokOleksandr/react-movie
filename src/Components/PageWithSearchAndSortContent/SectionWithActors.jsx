@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation} from "swiper";
 import axios from "axios";
+import {Autoplay} from "swiper";
 
 const Actors = () => {
     const [actors, setActors] = useState([])
@@ -11,37 +11,52 @@ const Actors = () => {
             .then(response => setActors(response.data.results))
     },[])
     return (
-        <Swiper
-            spaceBetween={35}
-            slidesPerGroup={2}
-            className={"Actors"}
-            navigation={true}
-            modules={[Navigation]}
-            breakpoints={ {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 2,
-                },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 3,
-                },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 6,
-                }
-            }}
-        >
-            {
-                actors.map(actor =>
-                    <SwiperSlide key={actor.id} className="Actors__Slide">
-                        <div className="Actors__Slide-Item">
+        <>
+            <h1 className="Title-Genres">
+                Актёры
+            </h1>
+            <Swiper
+                spaceBetween={35}
+                slidesPerGroup={1}
+                className={"Actors"}
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
+                modules={[Autoplay]}
+                breakpoints={ {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 2,
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 3,
+                    },
+                    // when window width is >= 640px
+                    800: {
+                        slidesPerView: 4,
+                    },
 
-                        </div>
-                    </SwiperSlide>
-                )
-            }
-        </Swiper>
+                }}
+            >
+                {
+                    actors.map(actor =>
+                        actor.profile_path
+                            ?
+                            <SwiperSlide key={actor.id} className="Actors__Slide">
+                                <a href="">
+                                    <img src={`https://image.tmdb.org/t/p/w300${actor.profile_path}`} alt="img"/>
+                                <p>{actor.name}</p>
+                                </a>
+                            </SwiperSlide>
+                            :
+                            <></>
+                    )
+                }
+            </Swiper>
+        </>
     );
 };
 
