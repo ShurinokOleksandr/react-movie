@@ -4,23 +4,31 @@ import SectionWithFilm from "../SectionWithFilm";
 import SectionFilterFilms from "./SectionFilterFilms";
 import GenresFilms from "./SectionFilterFilms/GenresFilms";
 import Actors from "./SectionWithActors";
+import {useLocation} from "react-router-dom";
+import ListOfFilms from "./ListOfFilms";
 
 const Index = ({obj}) => {
 
+    const location = useLocation()
 
-
-
+console.log(location)
     return (
         <section className="Films">
             <HeaderPageWithSearch {...obj}/>
-            <h1 style={{marginBottom:`30px`,color:`Yellow`}}>
-                Поиск Фильмов
-            </h1>
             <SectionFilterFilms/>
-            <SectionWithFilm/>
-            <GenresFilms/>
-            <SectionWithFilm/>
-            <Actors/>
+            {/*depending on the window.location*/}
+            {location.pathname === '/films' ||'/anime' ||'/tv' ?
+                <div>
+                    <SectionWithFilm/>
+                    <GenresFilms/>
+                    <SectionWithFilm/>
+                    <Actors/>
+                </div>
+                : <>
+                    <ListOfFilms/>
+                   </>
+            }
+
         </section>
     );
 };

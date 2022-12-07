@@ -2,7 +2,7 @@ import './assets/Styled/App.scss';
 import Header from "./Layouts/Header";
 import Footer from "./Layouts/Footer";
 import React from "react";
-import {createBrowserRouter, Outlet, Route, RouterProvider, Routes,} from "react-router-dom";
+import { Route, Routes,} from "react-router-dom";
 import Main from "./Pages/Main";
 import Films from "./Pages/Films";
 import TV from "./Pages/TV";
@@ -16,8 +16,7 @@ function App() {
                 <Header/>
                 <Routes>
                     <Route path={'/react-movie'} element={<Main/> }/>
-                    <Route path={'films'} element={<Films/> }>
-                    </Route>
+                    <Route path={'films'} element={<Films/> }/>
                     <Route path={'tv'} element={<TV/> } />
                     <Route path={'anime'} element={<Anime/> } />
                     <Route path={'home'} element={<Home/> } />

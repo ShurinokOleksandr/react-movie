@@ -1,0 +1,175 @@
+.List{
+  margin-bottom: 100px;
+  &__Container {
+    .Download{
+      margin-top: 20px;
+      cursor: pointer;
+      &__Text{
+        color: $Color;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        border: 1.5px solid $Color;
+        border-radius: 10px;
+      }
+    }
+    &-Block {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+      .Block__Item {
+        display: block;
+        position: relative;
+        height: 100%;
+
+        &-container {
+          .Img img {
+            border-radius: 16px;
+          }
+
+          .TitleFilm {
+            .title {
+              text-align: center;
+              color: $Color;
+              font-size: 1.5rem;
+              margin-top: 10px;
+              font-weight: bold;
+            }
+          }
+        }
+
+        //display: inline-block;
+        .HoverSlide {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 324px;
+          width: 216px;
+          border-radius: 16px;
+          background: rgba(0, 0, 0, 0.7);
+          opacity: 0;
+          display: flex;
+          flex-direction: row-reverse;
+          transition: 0.25s;
+
+          &__action {
+            flex: 1;
+            padding: 20px 20px 0 0;
+            margin-left: 50px;
+
+            .action-img {
+              margin-bottom: 10px;
+
+              img:hover {
+                position: relative;
+                top: 2px;
+              }
+            }
+
+          }
+
+          &__info {
+            display: flex;
+            width: 50%;
+            flex: 2;
+            align-items: flex-end;
+            padding: 0 0 20px 20px;
+
+            &-release {
+              margin-bottom: 5px;
+
+              .Wrap-Rate {
+                display: flex;
+                align-items: center;
+
+                .rate {
+                  color: #f4f4f4;
+                  font-size: 2.5rem;
+                  margin-bottom: 5px;
+                  margin-right: 10px;
+
+                }
+
+                .stars {
+                  * {
+                    color: #d6d633;
+                    font-size: 2rem;
+                  }
+                }
+              }
+
+              .properties {
+                color: #c6c4bf;
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+              }
+
+              .duration {
+                color: #c6c4bf;
+                font-size: 1.8rem;
+              }
+            }
+          }
+
+        }
+
+        @media (max-width: 1200px) {
+          .HoverSlide {
+            display: none;
+          }
+
+        }
+
+        .HoverSlide > * {
+          transform: translateY(20px);
+          transition: transform 0.25s;
+        }
+
+        .HoverSlide:hover > * {
+          transform: translateY(0px);
+        }
+
+        .HoverSlide:hover {
+          opacity: 1;
+        }
+      }
+    }
+    @media (max-width: 1200px) {
+      &-Block{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 30px;
+        place-items: center;
+        .Block__Item{
+          &-container{
+            .TitleFilm{
+              .title{
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 600px) {
+      &-Block{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 40px;
+        place-items: center;
+        .Block__Item{
+          &-container{
+            .TitleFilm{
+              .title{
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,16 +7,12 @@ import {Navigation, Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import {like, sameMovie, unlike, watchLater} from "../../assets/img";
-import {RateReview} from "@mui/icons-material";
-import {Rating, Stack} from "@mui/material";
+import CardFilm from "./CardFilm";
     export const api_key ='8ef3978391d5bf962188c41a2ab0b6d6'
 export const urlImg = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 
 const Index = () => {
     const [items,setItems] = useState([])
-    const urlImgCoursel = ``
-
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=1`)
             .then(res => setItems(res.data.results))
@@ -63,44 +59,7 @@ const Index = () => {
                             >
                                 {items.map(i =>
                                     <SwiperSlide className="gallery__slide" key={i.id} >
-                                        <a href="#">
-                                            <img className='img'
-                                                 src={`${urlImg}${i.poster_path}`}
-                                                 alt="img"
-                                            />
-                                            <div className="HoverSlide">
-                                                <div className="HoverSlide__action">
-                                                    <div className="action-img">
-                                                        <img title='Нравиться' src={like} alt="like"/>
-                                                    </div>
-                                                    <div className="action-img">
-                                                        <img title='Не нравиться' src={unlike} alt="unlike"/>
-                                                    </div>
-                                                    <div className="action-img">
-                                                        <a href="/#">
-                                                            <img title='Похожие' src={sameMovie} alt="sameMovie"/>
-                                                        </a>
-                                                    </div>
-                                                    <div className="action-img">
-                                                        <img title='Посмотреть позже' src={watchLater} alt="watchLater"/>
-                                                    </div>
-                                                </div>
-                                                <div className="HoverSlide__info">
-                                                    <div className="HoverSlide__info-release">
-                                                        <div className="Wrap-Rate">
-                                                        <span className="rate">
-                                                            {i.vote_average}
-                                                        </span>
-                                                            <Rating className={"stars"} name="half-rating-read" defaultValue={i.vote_average/2} precision={0.5} readOnly />
-                                                        </div>
-                                                        <div className="properties">
-                                                            2020,США,Боевик
-                                                        </div>
-                                                        <div className="duration">110мин</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
+                                        <CardFilm {...i}/>
                                     </SwiperSlide>
                                 )
                                 }
