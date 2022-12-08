@@ -7,7 +7,7 @@ import Main from "./Pages/Main";
 import Films from "./Pages/Films";
 import TV from "./Pages/TV";
 import Anime from "./Pages/Anime";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 import Watch from "./Pages/Watch";
 
 function App() {

@@ -1,0 +1,31 @@
+@import "../components/PageWithSearchAndSortContent/ListOfFilms";
+
+.Home{
+  max-width: 1200px;
+  margin: 50px  auto 0 auto;
+
+  .MuiBox-root{
+    padding: 0 20px;
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
+  }
+  .MuiTabs-flexContainer{
+    justify-content: space-around;
+
+    @media (max-width: 650px) {
+      justify-content: normal;
+    }
+  }
+
+
+  .Box__Content{
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .Home{
+    max-width: 90%;
+
+  }
+}

@@ -17,18 +17,18 @@ console.log(location)
             <HeaderPageWithSearch {...obj}/>
             <SectionFilterFilms/>
             {/*depending on the window.location*/}
-            {location.pathname === '/films' ||'/anime' ||'/tv' ?
-                <div>
-                    <SectionWithFilm/>
-                    <GenresFilms/>
-                    <SectionWithFilm/>
-                    <Actors/>
-                </div>
-                : <>
-                    <ListOfFilms/>
-                   </>
-            }
-
+            {/*{location.pathname !== 'films' ||'anime' ||'tv' ?*/}
+            {/*    <div>*/}
+            {/*        <SectionWithFilm/>*/}
+            {/*        <GenresFilms/>*/}
+            {/*        <SectionWithFilm/>*/}
+            {/*        <Actors/>*/}
+            {/*    </div>*/}
+            {/*    : <>*/}
+            {/*        <ListOfFilms/>*/}
+            {/*       </>*/}
+            {/*}*/}
+            <ListOfFilms/>
         </section>
     );
 };
