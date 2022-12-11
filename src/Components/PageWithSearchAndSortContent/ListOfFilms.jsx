@@ -19,7 +19,7 @@ const ListOfFilms = () => {
                 <div className="List__Container">
                     <div className="List__Container-Block">
                         {items.map(item =>
-                            <a key={item.id} href="#" className="Block__Item">
+                            <a key={item.id} href="#" className="Block__Item ">
                                 <div className="Block__Item-container">
                                     <div className="Img">
                                         <img src={`${urlImg}${item.poster_path}`} alt="img"/>

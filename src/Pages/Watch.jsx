@@ -2,9 +2,9 @@ import React from 'react';
 
 const Watch = () => {
     return (
-        <div>
-            about film
-        </div>
+        <section className={"AboutFilm"}>
+
+        </section>
     );
 };
 

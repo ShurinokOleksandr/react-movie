@@ -1,12 +1,13 @@
 import React from 'react';
 import {login} from "../../assets/img";
+import {Link} from "react-router-dom";
 
 const HeaderLogin = () => {
     return (
         <div className="Header__Login">
-            <a href="#" className="Header__Login--Link">
-                <img src={login} alt="Login" className="ImageLogin"/>
-            </a>
+            <Link to={"/login"} className="Header__Login--Link">
+                <img src={login} alt="Form" className="ImageLogin"/>
+            </Link>
         </div>
     );
 };
