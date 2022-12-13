@@ -5,6 +5,8 @@ import {all, tv} from "../../assets/img";
 import HeaderLinks from "../Header/HeaderLinks";
 import {NavLink} from "react-router-dom";
 import {useAuth} from "../../hooks/useAuth";
+import {getAuth} from "firebase/auth";
+import {useAuthState} from "react-firebase-hooks/auth";
 
 const Index = () => {
     const links = [' О компании','Вакансии',
@@ -12,8 +14,9 @@ const Index = () => {
         'Размещение рекламы',
         'Пользовательское соглашение',
         'Политика конфиденциальности']
-    const {isAuth} = useAuth()
-    return isAuth ? (
+    const auth = getAuth()
+    const [user] = useAuthState(auth)
+    return user ? (
         <footer className={'Footer'}>
             {/* footer screen > 1200px*/}
             <div className="Footer__container container">

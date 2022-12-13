@@ -11,7 +11,7 @@ const LoginPage = () => {
     const dispatch = useDispatch()
     const {isCheck} = useAuth()
     const [show,setShow] = useState(true)
-
+console.log(isCheck)
     return (
         <section className={'LoginPage'}>
             <div className="LoginPage__Container">

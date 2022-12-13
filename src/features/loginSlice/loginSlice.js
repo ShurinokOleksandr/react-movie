@@ -4,7 +4,7 @@ const initialState = {
     email : null,
     id : null,
     token : null,
-    isCheck:null,
+    isCheck:false,
 }
 
 const loginSlice = createSlice({
@@ -24,7 +24,7 @@ const loginSlice = createSlice({
             state.email = null
             state.id = null
             state.token = null
-            state.isCheck = null;
+            state.isCheck = false;
         },
     }
 })

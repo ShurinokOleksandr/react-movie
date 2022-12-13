@@ -1,19 +1,14 @@
 import React from 'react';
 import {login} from "../../assets/img";
-import {removeItem} from "../../features/loginSlice/loginSlice";
-import {useDispatch} from "react-redux";
+import {getAuth} from "firebase/auth";
 
 const HeaderLogin = () => {
-    const dispatch = useDispatch()
-    const exit = () => {
-        dispatch(removeItem())
-        localStorage.removeItem('inAccount')
-    }
+    const auth = getAuth();
     return (
         <div className="Header__Login">
             <div className="Header__Login--Link">
                 <img
-                    onClick={() => exit()}
+                    onClick={() => auth.signOut()}
                     src={login} alt="Form" className="ImageLogin"
                 />
             </div>

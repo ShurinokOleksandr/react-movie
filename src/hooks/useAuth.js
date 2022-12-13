@@ -8,6 +8,6 @@ export function useAuth(){
         token,
         id,
         email,
-        check : !!isCheck,
+        isCheck,
     }
 }

@@ -22,7 +22,6 @@
         display: block;
         position: relative;
         height: 100%;
-        width: 13vw;
         margin: 0 auto;
 
         &-container {
@@ -164,10 +163,11 @@
       &-Block{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-row-gap: 30px;
-        grid-column-gap: 40px;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
         place-items: center;
         .Block__Item{
+          //max-width: 150px;
           &-container{
             .TitleFilm{
               .title{
