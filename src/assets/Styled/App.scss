@@ -4,6 +4,7 @@
 @import "variables.scss";
 @import "components/all";
 @import "pages/home";
+@import "pages/LoginPage/LoginPage";
 @import "libs/normalize.scss";
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 #root{
@@ -14,12 +15,23 @@ body {
 }
 
 .App{
-  background: #370c87;
-  background: -webkit-linear-gradient(0deg, #370c87 0%, #4c075a 100%);
-  background: linear-gradient(0deg, #370c87 0%, #4c075a 100%);
+  background: linear-gradient(-45deg, #9158fb, #31027b, #5803ff, #28144c);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   padding: 20px 0 0 0 ;
   margin: 0px auto;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

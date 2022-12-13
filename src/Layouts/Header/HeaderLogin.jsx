@@ -1,13 +1,22 @@
 import React from 'react';
 import {login} from "../../assets/img";
-import {Link} from "react-router-dom";
+import {removeItem} from "../../features/loginSlice/loginSlice";
+import {useDispatch} from "react-redux";
 
 const HeaderLogin = () => {
+    const dispatch = useDispatch()
+    const exit = () => {
+        dispatch(removeItem())
+        localStorage.removeItem('inAccount')
+    }
     return (
         <div className="Header__Login">
-            <Link to={"/login"} className="Header__Login--Link">
-                <img src={login} alt="Form" className="ImageLogin"/>
-            </Link>
+            <div className="Header__Login--Link">
+                <img
+                    onClick={() => exit()}
+                    src={login} alt="Form" className="ImageLogin"
+                />
+            </div>
         </div>
     );
 };

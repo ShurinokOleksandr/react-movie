@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import FooterColumn from "./FooterColumn";
 import FooterSupport from "./FooterSupport";
 import {all, tv} from "../../assets/img";
 import HeaderLinks from "../Header/HeaderLinks";
 import {NavLink} from "react-router-dom";
+import {useAuth} from "../../hooks/useAuth";
 
 const Index = () => {
     const links = [' О компании','Вакансии',
@@ -11,9 +12,9 @@ const Index = () => {
         'Размещение рекламы',
         'Пользовательское соглашение',
         'Политика конфиденциальности']
-
-    return (
-        <footer className='Footer'>
+    const {isAuth} = useAuth()
+    return isAuth ? (
+        <footer className={'Footer'}>
             {/* footer screen > 1200px*/}
             <div className="Footer__container container">
                 <div className="Footer__container-content">
@@ -107,7 +108,7 @@ const Index = () => {
                 </div>
             </div>
         </footer>
-    );
+    ) : <></>
 };
 
 export default Index;
