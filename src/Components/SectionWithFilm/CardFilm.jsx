@@ -2,9 +2,10 @@ import React from 'react';
 import {like, sameMovie, unlike, watchLater} from "../../assets/img";
 import {Rating} from "@mui/material";
 import {urlImg} from "./index";
-const CardFilm = ({poster_path,vote_average}) => {
+import {Link} from "react-router-dom";
+const CardFilm = ({poster_path,vote_average,id}) => {
     return (
-        <a href="#">
+        <Link to={`/watch:${id}`}>
             <img className='img'
                  src={`${urlImg}${poster_path}`}
                  alt="img"
@@ -41,7 +42,7 @@ const CardFilm = ({poster_path,vote_average}) => {
                     </div>
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };
 

@@ -10,7 +10,7 @@ import {useAuth} from "../../../hooks/useAuth";
 const SingUp = () => {
     const dispatch = useDispatch();
     const nav = useNavigate();
-const {check} = useAuth()
+    const {isCheck} = useAuth()
     const handleRegister = (email, password) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
@@ -24,8 +24,9 @@ const {check} = useAuth()
                 nav('/');
             })
             .catch(console.error)
-        if(check){
-            localStorage.setItem('inAccount',email)
+        if(isCheck){
+            localStorage.setItem('email',email)
+            localStorage.setItem('password',password)
         }
     }
 

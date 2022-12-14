@@ -5,15 +5,16 @@
 @import "components/all";
 @import "pages/home";
 @import "pages/LoginPage/LoginPage";
+@import "pages/watch";
 @import "libs/normalize.scss";
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 #root{
 
 }
 body {
-  background: linear-gradient(-45deg, #9158fb, #31027b, #5803ff, #28144c);
+  background: linear-gradient(-45deg, #0cd4c0, #8f0b2e, #aa0789, #5b1dca);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 8s ease infinite;
   padding: 20px 0 0 0 ;
   margin: 0px auto;
   position: relative;

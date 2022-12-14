@@ -9,11 +9,11 @@ import LoginPage from "../Pages/LoginPage/LoginPage";
 
 export const privetRoutes = [
         {path:'/react-movie',element:<Main/>},
-        {path:'films',element:<Films/>,exact:true},
-        {path:'tv',element:<TV/>,exact:true},
-        {path:'anime',element:<Anime/>,exact:true},
-        {path:'home',element:<Home/>,exact:true},
-        {path:'watch/:id',element:<Watch/>,exact:true},
+        {path:'films',element:<Films/>},
+        {path:'tv',element:<TV/>},
+        {path:'anime',element:<Anime/>},
+        {path:'home',element:<Home/>},
+        {path:'/watch:id',element:<Watch/>},
 ]
 export const publicRoutes = [
         {path:'/loginPage',element:<LoginPage/>,exact:true},

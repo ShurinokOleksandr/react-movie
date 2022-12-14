@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {useDispatch} from "react-redux";
 import {logo} from "../../assets/img";
 import SingUp from "./Enter/SingUp";
@@ -11,7 +11,12 @@ const LoginPage = () => {
     const dispatch = useDispatch()
     const {isCheck} = useAuth()
     const [show,setShow] = useState(true)
-console.log(isCheck)
+    const [checked,setCheked] = useState(false)
+    function dispatchChecked(){
+        setCheked(!checked)
+        dispatch(addCheck({isCheck: !checked}))
+    }
+    console.log(isCheck)
     return (
         <section className={'LoginPage'}>
             <div className="LoginPage__Container">
@@ -32,8 +37,8 @@ console.log(isCheck)
                                             <p>Запомнить меня</p>
                                             <input
                                                 type={"checkbox"}
-                                                checked={isCheck}
-                                                onChange={() => dispatch(addCheck(!isCheck))}
+                                                checked={checked}
+                                                onChange={() => dispatchChecked() }
                                             />
                                         </div>
                                         <div className="ForgotPassword">

@@ -6,6 +6,9 @@
 
   .MuiBox-root{
     padding: 0 20px;
+    .Mui-selected{
+      color: #e47f7c;
+    }
   @media (max-width: 1000px) {
     padding: 0;
   }

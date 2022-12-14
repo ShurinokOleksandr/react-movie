@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {useAuth} from "../../hooks/useAuth";
 
 const Form = ({title,handleClick}) => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const {isCheck} = useAuth()
 
 
     return (

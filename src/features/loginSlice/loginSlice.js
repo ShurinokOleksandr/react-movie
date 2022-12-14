@@ -18,16 +18,10 @@ const loginSlice = createSlice({
         },
         addCheck(state,action){
             state.isCheck = action.payload.isCheck;
+        },
 
-        },
-        removeItem(state){
-            state.email = null
-            state.id = null
-            state.token = null
-            state.isCheck = false;
-        },
     }
 })
-export  const {addItem,addCheck,removeItem} = loginSlice.actions;
+export  const {addItem,addCheck} = loginSlice.actions;
 
 export default loginSlice.reducer;

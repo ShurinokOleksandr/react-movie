@@ -9,7 +9,7 @@ import {useAuth} from "../../../hooks/useAuth";
 const SingIn = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {check} = useAuth()
+    const {isCheck} = useAuth()
     const handleLogin = (email, password) => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
@@ -23,8 +23,9 @@ const SingIn = () => {
                 navigate('/react-movie');
             })
             .catch(() => alert('Invalid user!'))
-        if(check){
-            localStorage.setItem('inAccount',email)
+        if(isCheck){
+            localStorage.setItem('email',email)
+            localStorage.setItem('password',password)
         }
     }
 
