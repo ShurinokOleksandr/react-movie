@@ -10,25 +10,22 @@ import ListOfFilms from "./ListOfFilms";
 const Index = ({obj}) => {
 
     const location = useLocation()
-
-console.log(location)
     return (
         <section className="Films">
             <HeaderPageWithSearch {...obj}/>
             <SectionFilterFilms/>
             {/*depending on the window.location*/}
-            {/*{location.pathname !== 'films' ||'anime' ||'tv' ?*/}
-            {/*    <div>*/}
-            {/*        <SectionWithFilm/>*/}
-            {/*        <GenresFilms/>*/}
-            {/*        <SectionWithFilm/>*/}
-            {/*        <Actors/>*/}
-            {/*    </div>*/}
-            {/*    : <>*/}
-            {/*        <ListOfFilms/>*/}
-            {/*       </>*/}
-            {/*}*/}
-            <ListOfFilms/>
+            {location.pathname !== 'films' ||'anime' ||'tv' ?
+                <div>
+                    <SectionWithFilm/>
+                    <GenresFilms/>
+                    <SectionWithFilm/>
+                    <Actors/>
+                </div>
+                : <>
+                    <ListOfFilms/>
+                   </>
+            }
         </section>
     );
 };

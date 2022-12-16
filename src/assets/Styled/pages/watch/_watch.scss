@@ -1,0 +1,310 @@
+
+$maxWidth: 1280;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+.AboutFilm{
+  .BackImage{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-box-shadow: -2px 7px 26px 7px rgba(0,0,0,0.82);
+    -moz-box-shadow: -2px 7px 26px 7px rgba(0,0,0,0.82);
+    box-shadow: -2px 7px 26px 7px rgba(0,0,0,0.82);
+    margin-bottom: 50px;
+    .WrapHead{
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1) calc((50vw - 170px) - 340px), rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.7) 100%);
+
+      .AboutFilm__Container{
+        position: relative;
+        z-index: 100;
+        max-width: 1200px;
+        margin: 30px auto 0 auto;
+        .Header__Containerr{
+
+          &-Content{
+            .Wrapp__content{
+              display: flex;
+              justify-content: space-around;
+              padding: 70px 0;
+              .Poster{
+                margin-right: 70px;
+                img{
+                  border-radius: 16px ;
+                }
+              }
+
+              .Info{
+                max-width: 55%;
+                &__Content{
+                  h1{
+                    @include adaptiv-font(35,24);
+                    font-weight: bold;
+                    color:$Color;
+                    margin-bottom: 5px;
+                  }
+                  &-Header{
+                    display: flex;
+                    //justify-content: space-around;
+                    margin-bottom: 20px;
+
+                    .Info__Header-Item{
+                      margin-right: 15px;
+                      color:$Color;
+                      @include adaptiv-font(15,11);
+                      font-weight: bold;
+                    }
+
+                  }
+                  &-Actions{
+                    display: flex;
+                    align-items: center;
+                    .Mark{
+                      display: flex;
+                      margin-right: 20px;
+                      .SpanMark{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color:$Color;
+                        @include adaptiv-font(15,12);                      font-weight: bold;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        border: 1px solid yellow;
+                      }
+                      div{
+                        color:$Color;
+                        @include adaptiv-font(15,12);                      font-weight: bold;
+                        margin-right: 10px;
+
+                      }
+                    }
+                    .Action{
+                      width: 250px;
+
+                      &__List{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-right: 20px;
+
+                        &-Item{
+                          text-align: center;
+                          padding: 7px 0;
+                          color:$Color;
+                          @include adaptiv-font(15,12);
+                          font-weight: bold;
+                          width: 45px;
+                          height: 45px;
+                          background: #474746;
+                          border-radius: 50%;
+                        }
+                      }
+                    }
+
+
+                  }
+                  &-Text{
+                    .Trailer{
+                      color:$Color;
+                      @include adaptiv-font(15,12);
+                      font-weight: bold;
+                      border-radius: 10px;
+                      border: 1px solid #0cd4c0;
+                      padding: 15px 20px;
+                      margin: 20px 0;
+                    }
+                    .Tagline{
+                      color:$Color;
+                      @include adaptiv-font(15,12);
+                      font-weight: bold;
+                    }
+                    .Overview{
+                      color:$Color;
+                      @include adaptiv-font(20,24);
+                      font-weight: bold;
+                      margin-bottom: 20px;
+                    }
+                    .About{
+                      color:$Color;
+                      @include adaptiv-font(15,12);
+                      font-weight: bold;
+                      &:hover{
+                        color: #c3b40f;
+                      }
+                    }
+                    .spec{
+                      display: -webkit-box;
+                      overflow: hidden;
+                      -webkit-line-clamp: 2;
+                      -webkit-box-orient: vertical;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @import "../../components/PageWithSearchAndSortContent/ActorsSwiper";
+  @import "../../components/PageWithSearchAndSortContent/SwiperGenres";
+  .Container_Watch{
+    max-width: 1200px;
+    margin: 0 auto;
+    @import "reviewsSwiper";
+  }
+}
+
+@media (max-width: 1200px) {
+  .AboutFilm{
+
+    .grad{
+      .AboutFilm__Container{
+        .Header__Containerr{
+          &-Content{
+            .Wrapp__content{
+              .Poster{
+                img{
+                  //width: 40vw;
+
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 850px) {
+  .AboutFilm{
+
+    .grad{
+      .AboutFilm__Container{
+        .Header__Containerr{
+          &-Content{
+            .Wrapp__content{
+              display: flex;
+              //flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              margin: 0 40px;
+              .Poster{
+                margin: 0;
+                img{
+                  max-width: 80%;
+                  //margin: 0 auto;
+
+                ;
+                }
+              }
+              .Info{
+                &__Content{
+                  h1{
+                    text-align: center;
+                  }
+                  &-Header{
+
+                    //
+                    .Info__Header-Item:last-child{
+                      margin: 0;
+                    }
+                  }
+                  &-Actions{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .Mark{
+                      margin-bottom: 20px;
+                    }
+                    .Action{
+                      &__List{
+                        margin: 0;
+                      }
+                    }
+                  }
+                  &-Text{
+                    .Btn-Trailer{
+                      display: flex;
+                      //justify-content: center;
+                      .Trailer{
+
+                      }
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .AboutFilm{
+
+    .grad{
+      .AboutFilm__Container{
+        .Header__Containerr{
+          &-Content{
+            .Wrapp__content{
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              margin: 0 40px;
+              .Poster{
+                margin: 0;
+                img{
+                  max-width: 80%;
+                  margin: 0 auto;
+
+                ;
+                }
+              }
+              .Info{
+                max-width: 85%;
+                &__Content{
+                  h1{
+                    text-align: center;
+                  }
+                  &-Header{
+
+                    justify-content: center;
+                    .Info__Header-Item:last-child{
+                      margin: 0;
+                    }
+                  }
+                  &-Actions{
+                    flex-direction: column;
+                    align-items: center;
+                    .Mark{
+                      margin-bottom: 20px;
+                    }
+                  }
+                  &-Text{
+                    .Btn-Trailer{
+                      display: flex;
+                      justify-content: center;
+                      .Trailer{
+
+                      }
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
