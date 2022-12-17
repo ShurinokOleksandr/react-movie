@@ -31,7 +31,7 @@ $maxWidth: 1280;
               justify-content: space-around;
               padding: 70px 0;
               .Poster{
-                margin-right: 70px;
+
                 img{
                   border-radius: 16px ;
                 }
@@ -128,13 +128,14 @@ $maxWidth: 1280;
                       font-weight: bold;
                       margin-bottom: 20px;
                     }
-                    .About{
+                    .About,.Show{
                       color:$Color;
                       @include adaptiv-font(15,12);
                       font-weight: bold;
-                      &:hover{
-                        color: #c3b40f;
-                      }
+
+                    }
+                    .Show:hover{
+                      color: #c3b40f;
                     }
                     .spec{
                       display: -webkit-box;
@@ -156,14 +157,14 @@ $maxWidth: 1280;
   .Container_Watch{
     max-width: 1200px;
     margin: 0 auto;
-    @import "reviewsSwiper";
+    @import "reviews";
   }
 }
 
 @media (max-width: 1200px) {
   .AboutFilm{
 
-    .grad{
+    .BackImage{
       .AboutFilm__Container{
         .Header__Containerr{
           &-Content{
@@ -185,57 +186,59 @@ $maxWidth: 1280;
 @media (max-width: 850px) {
   .AboutFilm{
 
-    .grad{
-      .AboutFilm__Container{
-        .Header__Containerr{
-          &-Content{
-            .Wrapp__content{
-              display: flex;
-              //flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              margin: 0 40px;
-              .Poster{
-                margin: 0;
-                img{
-                  max-width: 80%;
-                  //margin: 0 auto;
+    .BackImage{
+      .WrapHead{
+        .AboutFilm__Container{
+          .Header__Containerr{
+            &-Content{
+              .Wrapp__content{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                margin: 0 40px;
+                .Poster{
+                  margin: 0;
+                  img{
+                    max-width: 80%;
+                    //margin: 0 auto;
 
-                ;
+                  ;
+                  }
                 }
-              }
-              .Info{
-                &__Content{
-                  h1{
-                    text-align: center;
-                  }
-                  &-Header{
+                .Info{
+                  &__Content{
+                    h1{
+                      text-align: center;
+                    }
+                    &-Header{
 
-                    //
-                    .Info__Header-Item:last-child{
-                      margin: 0;
-                    }
-                  }
-                  &-Actions{
-                    flex-direction: column;
-                    align-items: flex-start;
-                    .Mark{
-                      margin-bottom: 20px;
-                    }
-                    .Action{
-                      &__List{
+                      //
+                      .Info__Header-Item:last-child{
                         margin: 0;
                       }
                     }
-                  }
-                  &-Text{
-                    .Btn-Trailer{
-                      display: flex;
-                      //justify-content: center;
-                      .Trailer{
+                    &-Actions{
+
+                      align-items: flex-start;
+                      .Mark{
+                        margin-bottom: 20px;
+                      }
+                      .Action{
+                        &__List{
+                          margin: 0;
+                        }
+                      }
+                    }
+                    &-Text{
+                      .Btn-Trailer{
+                        display: flex;
+                        justify-content: flex-start;
+                        .Trailer{
+
+                        }
 
                       }
-
                     }
                   }
                 }
@@ -244,59 +247,62 @@ $maxWidth: 1280;
           }
         }
       }
+
     }
   }
 }
 @media (max-width: 600px) {
   .AboutFilm{
+      .BackImage{
+        .WrapHead{
+          .AboutFilm__Container{
+            .Header__Containerr{
+              &-Content{
+                .Wrapp__content{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  align-items: center;
+                  margin: 0 40px;
+                  .Poster{
+                    margin: 0;
+                    img{
+                      max-width: 80%;
+                      margin: 0 auto;
 
-    .grad{
-      .AboutFilm__Container{
-        .Header__Containerr{
-          &-Content{
-            .Wrapp__content{
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              margin: 0 40px;
-              .Poster{
-                margin: 0;
-                img{
-                  max-width: 80%;
-                  margin: 0 auto;
-
-                ;
-                }
-              }
-              .Info{
-                max-width: 85%;
-                &__Content{
-                  h1{
-                    text-align: center;
-                  }
-                  &-Header{
-
-                    justify-content: center;
-                    .Info__Header-Item:last-child{
-                      margin: 0;
+                    ;
                     }
                   }
-                  &-Actions{
-                    flex-direction: column;
-                    align-items: center;
-                    .Mark{
-                      margin-bottom: 20px;
-                    }
-                  }
-                  &-Text{
-                    .Btn-Trailer{
-                      display: flex;
-                      justify-content: center;
-                      .Trailer{
-
+                  .Info{
+                    max-width: 85%;
+                    &__Content{
+                      h1{
+                        text-align: center;
                       }
+                      &-Header{
 
+                        //justify-content: center;
+                        .Info__Header-Item:last-child{
+                          margin: 0;
+                        }
+                      }
+                      &-Actions{
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .Mark{
+                          margin-bottom: 20px;
+                        }
+                      }
+                      &-Text{
+                        .Btn-Trailer{
+                          display: flex;
+                          //justify-content: center;
+                          .Trailer{
+
+                          }
+
+                        }
+                      }
                     }
                   }
                 }
@@ -304,7 +310,7 @@ $maxWidth: 1280;
             }
           }
         }
+
       }
-    }
   }
 }

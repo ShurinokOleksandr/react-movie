@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import SectionWithFilm from "../Components/SectionWithFilm";
 import Actors from "../Components/PageWithSearchAndSortContent/SectionWithActors";
-import ReviewsSwiper from "../Components/Reviews/ReviewsSwiper";
+import Reviews from "../Components/Reviews/ReviewsSwiper";
 
 
 
@@ -63,7 +62,7 @@ const Watch = () => {
                                                     Содержимое
                                                 </h2>
                                                 <p className={text  ? "About" : "About spec"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto deleniti deserunt error explicabo, ipsa, laudantium minima neque nobis nostrum optio porro praesentium, recusandae sapiente sunt tempore voluptates voluptatibus. Aliquid, commodi consectetur corporis doloremque ea laborum laudantium magni, modi nostrum perspiciatis quisquam quod repellendus tempore ullam voluptatem. Ex neque sunt voluptatem!</p>
-                                                <p className={"About"} onClick={() => setText(!text)}>{text ? "Закрыть" : "Развернуть"}</p>
+                                                <p className={"Show"} onClick={() => setText(!text)}>{text ? "Закрыть" : "Развернуть"}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -77,7 +76,7 @@ const Watch = () => {
                 <Actors/>
             </div>
             <div className="Container_Watch">
-                <ReviewsSwiper/>
+                <Reviews/>
             </div>
         </section>
     );
