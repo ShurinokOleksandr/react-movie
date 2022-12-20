@@ -3,20 +3,30 @@ import {useDispatch} from "react-redux";
 import {logo} from "../../assets/img";
 import SingUp from "./Enter/SingUp";
 import SingIn from "./Enter/SingIn";
-import {useAuth} from "../../hooks/useAuth";
 import {addCheck} from "../../features/loginSlice/loginSlice";
-
-
+import {getAuth, GoogleAuthProvider,FacebookAuthProvider,GithubAuthProvider,signInAnonymously , signInWithPopup} from "firebase/auth";
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import PersonOutlineSharpIcon from '@mui/icons-material/PersonOutlineSharp';
 const LoginPage = () => {
     const dispatch = useDispatch()
-    const {isCheck} = useAuth()
     const [show,setShow] = useState(true)
     const [checked,setCheked] = useState(false)
+
+
+    const auth = getAuth();
+    const Googleprovider = new GoogleAuthProvider();
+    const FaceBookprovider = new FacebookAuthProvider();
+    const provider = new GithubAuthProvider();
+
     function dispatchChecked(){
         setCheked(!checked)
         dispatch(addCheck({isCheck: !checked}))
     }
-    console.log(isCheck)
+
+
+
     return (
         <section className={'LoginPage'}>
             <div className="LoginPage__Container">
@@ -58,10 +68,31 @@ const LoginPage = () => {
                                             Или используйте это:
                                         </div>
                                         <ul className="ListService">
-                                            <li className="ListService-Item">g</li>
-                                            <li className="ListService-Item">f</li>
-                                            <li className="ListService-Item">g</li>
-                                            <li className="ListService-Item">a</li>
+                                            <li onClick={() => signInWithPopup(auth, Googleprovider)} className="ListService-Item">
+                                                <GoogleIcon sx={{ fontSize: 30 }} color='primary'/>
+                                            </li>
+                                            <li  onClick={() => signInWithPopup(auth, FaceBookprovider)} className="ListService-Item">
+                                                <FacebookTwoToneIcon
+                                                    sx={{ fontSize: 30}}
+                                                    className={'FacebookIcon'}
+                                                    color='primary'
+                                                />
+                                            </li>
+                                            <li
+                                                onClick={() => signInWithPopup(auth, provider)}
+                                                className="ListService-Item">
+                                                <GitHubIcon
+                                                    sx={{ fontSize: 30 }}
+                                                    color='primary'
+                                                />
+                                            </li>
+                                            <li onClick={() => signInAnonymously(auth)}
+                                                className="ListService-Item">
+                                                <PersonOutlineSharpIcon
+                                                    sx={{ fontSize: 30}}
+                                                    color='primary'
+                                                />
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

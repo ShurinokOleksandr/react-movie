@@ -51,7 +51,10 @@
                   outline:none;
                   &::placeholder{
                     color: #3f0909;
-
+                  }
+                  &:active{
+                    position: relative;
+                    top: 2px;
                   }
                   @media (max-width: 375px) {
                     &::placeholder{
@@ -103,12 +106,16 @@
               }
             }
             &__Text{
-                margin-bottom: 20px;
-                border-radius: 10px;
-                padding: 10px 0 10px 15px;
-                background: #eded66;
-                font-size: 1.5rem ;
-                text-align: center;
+              margin-bottom: 20px;
+              border-radius: 10px;
+              padding: 10px 0 10px 15px;
+              background: #eded66;
+              font-size: 1.5rem ;
+              text-align: center;
+              &:active{
+                position: relative;
+                top: 2px;
+              }
             }
             &__LoginWithService{
               margin-bottom: 30px;
@@ -123,12 +130,23 @@
                 display: flex;
                 justify-content: space-around;
                 &-Item{
-                  background: #b5a9a9;
-                  text-align: center;
-                  width: 40px;
-                  padding: 10px;
-                  height: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  //background: #1976d2;
+                  width: 45px;
+                  height: 45px;
                   border-radius: 50%;
+                  cursor: pointer;
+
+                  &:hover{
+                    background: #5ff470;
+                  }
+                  &:active{
+                    position: relative;
+                    top: 2px;
+                  }
+
                 }
               }
             }
