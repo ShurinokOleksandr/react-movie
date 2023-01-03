@@ -1,24 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import axios from "axios";
 import {Navigation, Pagination} from "swiper";
-// Import Swiper styles
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import CardFilm from "./CardFilm";
-    export const api_key ='8ef3978391d5bf962188c41a2ab0b6d6'
+import {Skeleton} from "@mui/material";
+
 export const urlImg = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
 
-const Index = () => {
-    const [items,setItems] = useState([])
-    useEffect(()=>{
-        axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=1`)
-            .then(res => setItems(res.data.results))
+const Index = ({fetchURL,text}) => {
+    const [movies,setMovies] = useState([])
+    const [loading,setLoading] = useState(true)
+    useEffect(()=> {
+        axios.get(fetchURL).then((res) => {
+            setMovies(res.data.results)
+            setLoading(false)
+        })
 
-    },[])
-
+    },[fetchURL])
+    console.log(movies)
     return (
         <section className="Section Section_styles">
             <div className="Section__container">
@@ -27,7 +29,7 @@ const Index = () => {
                         <div className="gallery__blockHeader">
                             <a href="#" className="blockHeader">
                                 <h1  className="blockHeader__text">
-                                    Рекомендуемо к просмотру
+                                    {text}
                                 </h1>
                             </a>
                         </div>
@@ -57,7 +59,14 @@ const Index = () => {
                                 modules={[Pagination, Navigation]}
                                 className="gallery__swiper"
                             >
-                                {items.map(i =>
+                                {loading ?
+                                    [...new Array(6)].map((_,i) =>
+                                        <SwiperSlide className="gallery__slide" key={i.id} >
+                                            <Skeleton variant="rectangular" style={{borderRadius:'16px'}} width={220} height={340} />
+                                        </SwiperSlide>
+                                        )
+                                    :
+                                    movies.map(i =>
                                     <SwiperSlide className="gallery__slide" key={i.id} >
                                         <CardFilm {...i}/>
                                     </SwiperSlide>

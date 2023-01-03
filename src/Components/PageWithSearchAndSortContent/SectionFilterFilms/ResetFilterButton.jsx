@@ -1,13 +1,12 @@
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-const ResetFilterButton = () => {
+const ResetFilterButton = ({children}) => {
 
     return (
 
         <button className="Reset__Filter">
-            <CloseIcon className="Reset__Filter-img"/>
             <p>
-                Сбросить фильтр
+                {children}
             </p>
         </button>
     );

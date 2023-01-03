@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {api_key, urlImg} from "../SectionWithFilm";
+import {urlImg} from "../SectionWithFilm";
 import axios from "axios";
 import {like, sameMovie, unlike, watchLater} from "../../assets/img";
 import {Rating} from "@mui/material";
 import {useLocation} from "react-router-dom";
+import {api_key} from "../../Requests";
 
 const ListOfFilms = () => {
     const [items,setItems] = useState([])

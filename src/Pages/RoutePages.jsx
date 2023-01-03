@@ -17,7 +17,6 @@ function RoutePages() {
     const nav = useNavigate();
     const auth = getAuth();
     const [user,loading] = useAuthState(auth);
-    console.log(user);
     useEffect(() => {
         if(user){
             window.scrollTo(0,0)
@@ -26,10 +25,6 @@ function RoutePages() {
             nav('/loginPage')
         }
     },[user])
-
-
-
-
     return (
         loading ?
             <>

@@ -16,5 +16,5 @@ export const privetRoutes = [
         {path:'/watch:id',element:<Watch/>},
 ]
 export const publicRoutes = [
-        {path:'/loginPage',element:<LoginPage/>,exact:true},
+        {path:'/loginPage',element:<LoginPage/>},
 ]
