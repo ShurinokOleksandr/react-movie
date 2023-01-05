@@ -6,7 +6,6 @@ import GenresFilms from "./SectionFilterFilms/GenresFilms";
 import Actors from "./SectionWithActors";
 import {useLocation} from "react-router-dom";
 import ListOfFilms from "./ListOfFilms";
-import {requestsMovies} from "../../Requests";
 
 const Index = ({obj}) => {
 
@@ -18,11 +17,11 @@ const Index = ({obj}) => {
             {/*depending on the window.location*/}
             {location.pathname !== 'films' ||'anime' ||'tv' ?
                 <div>
-                    <SectionWithFilm text ={'Рекомендуемо к просмотру'} fetchURL={requestsMovies.requestRated}/>
+                    <SectionWithFilm text ={'Рекомендуемо к просмотру'} fetchURL={obj.url.requestRated}/>
                     <GenresFilms/>
-                    <SectionWithFilm text ={'Скоро в прокате'} fetchURL={requestsMovies.requestUpcoming}/>
+                    <SectionWithFilm text ={'Ужасы'} fetchURL={obj.url.requestHorror}/>
                     <Actors/>
-                    <SectionWithFilm text ={'Популярные Фильмы'} fetchURL={requestsMovies.requestPopular}/>
+                    <SectionWithFilm text ={'Популярные Сериалы'} fetchURL={obj.url.requestPopular}/>
                 </div>
                 : <>
                     <ListOfFilms/>

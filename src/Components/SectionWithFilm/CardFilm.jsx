@@ -19,9 +19,9 @@ const CardFilm = ({poster_path,vote_average,id}) => {
                         <img title='Не нравиться' src={unlike} alt="unlike"/>
                     </div>
                     <div className="action-img">
-                        <a href="/#">
+                        <p to="/#">
                             <img title='Похожие' src={sameMovie} alt="sameMovie"/>
-                        </a>
+                        </p>
                     </div>
                     <div className="action-img">
                         <img title='Посмотреть позже' src={watchLater} alt="watchLater"/>

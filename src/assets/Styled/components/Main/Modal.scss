@@ -53,6 +53,8 @@
                   font-size: 4rem;
                   color: $Color;
                   margin-bottom: 40px;
+                  cursor: pointer;
+
                 }
               }
               .Modal-input{
@@ -82,20 +84,22 @@
               grid-gap: 10px;
               .Modal__Hint{
                 margin-bottom: 20px;
-                .Wrapper__Found{
-                  display: flex;
-                  .Found-Img{
-                    margin-right: 10px;
-                  }
-                  .Hint-About{
-                    h6{
-                      color: $Color;
-                      font-size: 2vh;
-
+                &-Link{
+                  .Wrapper__Found{
+                    display: flex;
+                    .Found-Img{
+                      margin-right: 10px;
                     }
-                    p{
-                      color: $Color;
-                      font-size: 1.4rem;
+                    .Hint-About{
+                      h6{
+                        color: $Color;
+                        font-size: 2vh;
+
+                      }
+                      p{
+                        color: $Color;
+                        font-size: 1.4rem;
+                      }
                     }
                   }
                 }

@@ -4,7 +4,7 @@ import axios from "axios";
 import {like, sameMovie, unlike, watchLater} from "../../assets/img";
 import {Rating} from "@mui/material";
 import {useLocation} from "react-router-dom";
-import {api_key} from "../../Requests";
+import {api_key} from "../../Requests/Requests";
 
 const ListOfFilms = () => {
     const [items,setItems] = useState([])

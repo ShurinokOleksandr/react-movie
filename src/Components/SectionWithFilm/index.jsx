@@ -18,9 +18,7 @@ const Index = ({fetchURL,text}) => {
             setMovies(res.data.results)
             setLoading(false)
         })
-
     },[fetchURL])
-    console.log(movies)
     return (
         <section className="Section Section_styles">
             <div className="Section__container">
@@ -61,7 +59,7 @@ const Index = ({fetchURL,text}) => {
                             >
                                 {loading ?
                                     [...new Array(6)].map((_,i) =>
-                                        <SwiperSlide className="gallery__slide" key={i.id} >
+                                        <SwiperSlide className="gallery__slide" key={i} >
                                             <Skeleton variant="rectangular" style={{borderRadius:'16px'}} width={220} height={340} />
                                         </SwiperSlide>
                                         )

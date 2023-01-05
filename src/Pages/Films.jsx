@@ -1,8 +1,10 @@
 import React from 'react';
 import PageWithSearchAndSortContent from "../Components/PageWithSearchAndSortContent";
+import {requestsMovies} from "../Requests/Requests";
 
 const Films = () => {
     const obj = {
+        url:requestsMovies,
         title:'Фильмы',
         page:'Вы любите смотреть фильмы онлайн и проводите много времени,' +
             ' прочесывая сайты в поисках чего-нибудь ' +

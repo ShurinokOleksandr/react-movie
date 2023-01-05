@@ -20,11 +20,6 @@ const HeaderLinks = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to={"anime"} className={({ isActive }) => isActive ? 'link activeLink' : 'link'}>
-                    Аниме
-                </NavLink>
-            </li>
-            <li>
                 <NavLink to="home" className={({ isActive }) => isActive ? 'link activeLink' : 'link'}>
                     Домашняя
                 </NavLink>

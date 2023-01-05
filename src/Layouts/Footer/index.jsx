@@ -1,10 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import FooterColumn from "./FooterColumn";
 import FooterSupport from "./FooterSupport";
 import {all, tv} from "../../assets/img";
-import HeaderLinks from "../Header/HeaderLinks";
 import {NavLink} from "react-router-dom";
-import {useAuth} from "../../hooks/useAuth";
 import {getAuth} from "firebase/auth";
 import {useAuthState} from "react-firebase-hooks/auth";
 
@@ -105,7 +103,6 @@ const Index = () => {
                         <li><NavLink to={"/react-movie"} className={({ isActive }) => isActive ? 'Fixed-link activeLink' : 'Fixed-link'}>Главная</NavLink></li>
                         <li><NavLink to={"films"} className={({ isActive }) => isActive ? 'Fixed-link activeLink' : 'Fixed-link'}>Фильмы</NavLink></li>
                         <li><NavLink to={"tv"} className={({ isActive }) => isActive ? 'Fixed-link activeLink' : 'Fixed-link'}>TV</NavLink></li>
-                        <li><NavLink to={"anime"} className={({ isActive }) => isActive ? 'Fixed-link activeLink' : 'Fixed-link'}>Аниме</NavLink></li>
                         <li><NavLink to={"home"} className={({ isActive }) => isActive ? 'Fixed-link activeLink' : 'Fixed-link'}>Домашняя</NavLink></li>
                     </ul>
                 </div>
