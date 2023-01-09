@@ -1,22 +1,50 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import FoundFilm from "../FoundFilm/FoundFilm";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchSearchContent} from "../../features/SearchSlice";
+import {removeContent} from "../../features/SearchSlice"
 
 const Modal = ({visible,setVisible}) => {
-    const [value,setValue] = useState('')
-    const dispatch = useDispatch()
-    const {searchContent} = useSelector(state => state.searchContent)
-
     let classRoot = ['Header__Modal']
     if (visible){
         classRoot.push('active')
     }
-    const onChangeInput = (e) =>{
-        let newQuery = e.target.value
-        setValue(newQuery)
-        dispatch(fetchSearchContent(newQuery))
-    }
+    let timer
+
+
+    const mediaTypes = ['movie','tv','person'];
+    const [value,setValue] = useState('')
+    const [mediaType, setMediaType] = useState(mediaTypes[0])
+
+    const dispatch = useDispatch()
+    const {searchContent} = useSelector(state => state.searchContent)
+
+    const search = useCallback(() => {
+        dispatch(fetchSearchContent({value, mediaType}))
+    },[mediaType,value])
+
+
+    const onQueryChange = (e) => {
+        const newQuery = e.target.value;
+        clearTimeout(timer);
+        setValue(newQuery);
+    };
+    useEffect(()=>{
+        setValue('')
+        dispatch(removeContent())
+    },[mediaType])
+    useEffect(()=>{
+        if(value){
+            timer =  setTimeout(() => {
+                search()
+            },1000)
+
+        }
+    },[value])
+
+
+    const onCategoryChange = (setChangeCategory) => setMediaType(setChangeCategory)
+
     console.log(searchContent)
     return (
         <div className={classRoot.join(' ')}>
@@ -26,16 +54,28 @@ const Modal = ({visible,setVisible}) => {
                         <div className="Modal-content">
                             <div className="wrapper__modal-title">
                                 <div className="title__container">
-                                    <div className="sd">
+                                    <div className="title__container-header">
                                         <h2>Поиск...</h2>
-                                        <button onClick={() => setVisible(false)} className="Close_Modal">Закрыть</button>
+                                        <div className="MediaTypes">
+                                            {
+                                                mediaTypes.map((item,index) =>
+                                                    <button
+                                                        onClick={() => onCategoryChange(item)}
+                                                        key={index}
+                                                        className={mediaType === item ? 'MediaTypes__Type Modal__Btn activeMediaType' : 'MediaTypes__Type Modal__Btn'}>
+                                                        {item.toUpperCase()}
+                                                    </button>
+                                                )
+                                            }
+                                        </div>
+                                        <button onClick={() => setVisible(false)} className="Close_Modal Modal__Btn">Закрыть</button>
                                     </div>
                                     <div className="Modal-input">
                                         <input
                                             type="text"
                                             placeholder='Фильмы, персоны, жанры'
                                             value={value}
-                                            onChange={onChangeInput}
+                                            onChange={onQueryChange}
                                         />
                                     </div>
                                 </div>
@@ -45,8 +85,7 @@ const Modal = ({visible,setVisible}) => {
                                     <div className="Hint__Flex">
                                         {
                                             searchContent.map(arr =>
-                                                <FoundFilm {...arr}/>
-                                        )
+                                                <FoundFilm key={arr.id} {...arr}/>)
                                         }
                                     </div>
                                 </div>

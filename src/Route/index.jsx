@@ -11,7 +11,7 @@ export const privetRoutes = [
         {path:'films',element:<Films/>},
         {path:'tv',element:<TV/>},
         {path:'home',element:<Home/>},
-        {path:'/watch:id',element:<Watch/>},
+        {path:'/watch/:id',element:<Watch/>},
 ]
 export const publicRoutes = [
         {path:'/loginPage',element:<LoginPage/>},

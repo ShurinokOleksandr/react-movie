@@ -1,0 +1,77 @@
+.Reviews{
+  //background: #000;
+  &__Content{
+    &-Title{
+      margin-bottom: 20px;
+      h1{
+        color:$Color;
+        margin-left: 10px;
+      }
+    }
+    &-Inner{
+      .Inner__Block{
+        border-radius: 16px;
+        -webkit-box-shadow: 0px 0px 21px 6px rgba(26,173,144,1);
+        -moz-box-shadow: 0px 0px 21px 6px rgba(26,173,144,1);
+        box-shadow: 0px 0px 21px 6px rgba(26,173,144,1);
+        padding: 40px;
+        margin: 0 30px;
+        &-Title{
+          display: flex;
+          .ImgTitle{
+            margin-right: 30px;
+          }
+          .NameTitle{
+            .NameRating{
+              display: flex;
+              align-items: center;
+              h2{
+                color:$Color;
+              }
+              .rating{
+                padding: 1px 8px;
+                margin-left: 14px;
+                font-size:1.5em;
+                display: inline-flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+                background-color: #000;
+                border-color: #000;
+                color: #fff;
+                border-radius: 15px;
+                .star{
+                  margin-right: 5px;
+                }
+              }
+            }
+            .DateReviews{
+              color: $Color;
+              font-size: 1.4rem;
+            }
+          }
+        }
+        &-Body{
+          margin-top: 30px;
+          .Text{
+            .About,.Show{
+              color:$Color;
+              @include adaptiv-font(15,12);
+              font-weight: bold;
+
+            }
+            .Show:hover{
+              color: #c3b40f;
+            }
+            .spec{
+              display: -webkit-box;
+              overflow: hidden;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
+          }
+        }
+      }
+    }
+  }
+}

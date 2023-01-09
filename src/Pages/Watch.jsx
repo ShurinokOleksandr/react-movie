@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Actors from "../Components/PageWithSearchAndSortContent/SectionWithActors";
 import Reviews from "../Components/Reviews/ReviewsSwiper";
 
@@ -10,6 +10,9 @@ const Watch = () => {
     const urlImgPost = `https://image.tmdb.org/t/p/w300/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg`
     const urlback =`https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg`
     const [text,setText] = useState(false)
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    })
     return (
         <section className={"AboutFilm"}>
             <div style={{backgroundImage:`url(${urlback})`}}  className="BackImage">

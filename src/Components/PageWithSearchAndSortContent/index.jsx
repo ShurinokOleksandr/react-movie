@@ -21,7 +21,7 @@ const Index = ({obj}) => {
                     <GenresFilms/>
                     <SectionWithFilm text ={'Ужасы'} fetchURL={obj.url.requestHorror}/>
                     <Actors/>
-                    <SectionWithFilm text ={'Популярные Сериалы'} fetchURL={obj.url.requestPopular}/>
+                    <SectionWithFilm text ={'Популярные Фильмы  '} fetchURL={obj.url.requestPopular}/>
                 </div>
                 : <>
                     <ListOfFilms/>

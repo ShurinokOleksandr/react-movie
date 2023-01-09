@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import axios from "axios";
 import {Autoplay} from "swiper";
+import {Link} from "react-router-dom";
 
 const Actors = () => {
     const [actors, setActors] = useState([])
@@ -46,10 +47,10 @@ const Actors = () => {
                         actor.profile_path
                             ?
                             <SwiperSlide key={actor.id} className="Actors__Slide">
-                                <a href="">
+                                <Link to={'#'}>
                                     <img src={`https://image.tmdb.org/t/p/w300${actor.profile_path}`} alt="img"/>
                                 <p>{actor.name}</p>
-                                </a>
+                                </Link>
                             </SwiperSlide>
                             :
                             <></>

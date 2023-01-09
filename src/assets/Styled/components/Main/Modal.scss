@@ -9,19 +9,21 @@
   z-index: 1001;
   .Close_Modal{
     display: block;
+    margin-bottom: 40px;
+  }
+  .Close_Modal:active{
+    background: #5f1cd6;
+  }
+  .Modal__Btn{
     height: 40px;
     width: 90px;
     border-radius: 20px;
-    margin-bottom: 40px;
     color: $Color;
     font-weight: bold;
     font-size: 1.6rem;
     background: $background;
     border: none;
     cursor: pointer;
-  }
-  .Close_Modal:active{
-    background: #5f1cd6;
   }
   .Modal_Overlay{
     position: absolute;
@@ -46,7 +48,7 @@
               max-width: 900px;
               margin: 0 auto;
               padding: 0 50px;
-              .sd{
+              .title__container-header{
                 display: flex;
                 justify-content: space-between;
                 h2{
@@ -55,6 +57,19 @@
                   margin-bottom: 40px;
                   cursor: pointer;
 
+                }
+                .MediaTypes{
+                  &__Type{
+                    margin: 0 5px;
+                    background: none;
+                    border-radius: 5px;
+                    &:hover{
+                      background: #3f0707;
+                    }
+                  }
+                  .activeMediaType{
+                    background: #a31111;
+                  }
                 }
               }
               .Modal-input{
@@ -82,6 +97,8 @@
               grid-template-columns: repeat(2, 1fr);
               grid-template-rows: repeat(5, 1fr);
               grid-gap: 10px;
+              overflow: auto;
+              height: 530px;
               .Modal__Hint{
                 margin-bottom: 20px;
                 &-Link{
@@ -89,11 +106,14 @@
                     display: flex;
                     .Found-Img{
                       margin-right: 10px;
+                      .Hint__img{
+                        max-width: none;
+                      }
                     }
                     .Hint-About{
                       h6{
                         color: $Color;
-                        font-size: 2vh;
+                        font-size: 15px;
 
                       }
                       p{

@@ -4,8 +4,9 @@ import {Rating} from "@mui/material";
 import {urlImg} from "./index";
 import {Link} from "react-router-dom";
 const CardFilm = ({poster_path,vote_average,id}) => {
+
     return (
-        <Link to={`/watch:${id}`}>
+        <Link to={`/watch/${id}`}>
             <img className='img'
                  src={`${urlImg}${poster_path}`}
                  alt="img"
@@ -19,9 +20,9 @@ const CardFilm = ({poster_path,vote_average,id}) => {
                         <img title='Не нравиться' src={unlike} alt="unlike"/>
                     </div>
                     <div className="action-img">
-                        <p to="/#">
+                        <Link to="#">
                             <img title='Похожие' src={sameMovie} alt="sameMovie"/>
-                        </p>
+                        </Link>
                     </div>
                     <div className="action-img">
                         <img title='Посмотреть позже' src={watchLater} alt="watchLater"/>
